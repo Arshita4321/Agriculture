@@ -15,7 +15,7 @@ A full-stack production-ready e-commerce platform for Indian ethnic fashion.
 | Backend | Node.js, Express.js |
 | Database | MongoDB + Mongoose |
 | Auth | JWT + Role-Based |
-| Payments | Razorpay + Stripe + COD |
+| Payments | Razorpay + COD |
 | Charts | Recharts |
 
 ## ⚙️ Setup

@@ -18,7 +18,7 @@ const Toggle = ({ value, onChange, label, desc }) => (
 
 export default function AdminSettings() {
   const [store, setStore] = useState({ name:'Lavender', email:'hello@lavender-styleemporio.in', phone:'+91 98765 43210', address:'Fashion District, Bandra, Mumbai 400050', currency:'INR', shippingCharges:99, tagline:'The Style Emporio', metaDesc:'Premium ethnic & traditional fashion', handlingCharge:0 });
-  const [payments, setPayments] = useState({ codEnabled:true, razorpayEnabled:true, stripeEnabled:false });
+  const [payments, setPayments] = useState({ codEnabled:true, razorpayEnabled:true });
   const [notifs, setNotifs] = useState({ newOrder:true, lowStock:true, customerReview:false, paymentFail:true, dailyReport:false, weeklyReport:true });
   const [brand, setBrand] = useState({ primaryColor:'#4A1068', accentColor:'#C9963C', goldColor:'#B45309' });
   const [cancellationFee, setCancellationFee] = useState(100);
@@ -113,11 +113,10 @@ export default function AdminSettings() {
           <div className="space-y-3 mb-5">
             <Toggle value={payments.codEnabled} onChange={() => setPayments(p=>({...p,codEnabled:!p.codEnabled}))} label="Cash on Delivery" desc="Allow customers to pay on delivery"/>
             <Toggle value={payments.razorpayEnabled} onChange={() => setPayments(p=>({...p,razorpayEnabled:!p.razorpayEnabled}))} label="Razorpay" desc="UPI, cards, netbanking & wallets"/>
-            <Toggle value={payments.stripeEnabled} onChange={() => setPayments(p=>({...p,stripeEnabled:!p.stripeEnabled}))} label="Stripe" desc="International card payments"/>
           </div>
           <div className="bg-champagne-light/80 rounded-xl p-4 mb-5">
             <p className="font-body text-xs font-bold text-primary mb-2 flex items-center gap-1"><Shield size={12}/>API Keys (set in .env)</p>
-            {[['RAZORPAY_KEY_ID','rzp_test_••••••••'],['RAZORPAY_KEY_SECRET','•••••••••••••••'],['STRIPE_SECRET_KEY','sk_test_••••••••']].map(([k,v]) => (
+            {[['RAZORPAY_KEY_ID','rzp_test_••••••••'],['RAZORPAY_KEY_SECRET','•••••••••••••••']].map(([k,v]) => (
               <div key={k} className="flex justify-between items-center py-1">
                 <span className="font-body text-[11px] text-gray-500 font-mono">{k}</span>
                 <span className="font-body text-[11px] text-gray-400">{v}</span>

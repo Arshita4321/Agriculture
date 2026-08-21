@@ -177,19 +177,4 @@ router.post('/cod/confirm', protect, async (req, res) => {
   }
 });
 
-// Stripe payment intent
-router.post('/stripe/create-intent', protect, async (req, res) => {
-  try {
-    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-    const { amount } = req.body;
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: Math.round(Number(amount) * 100),
-      currency: 'inr'
-    });
-    res.json({ success: true, clientSecret: paymentIntent.client_secret });
-  } catch (err) {
-    res.status(500).json({ success: false, message: err.message });
-  }
-});
-
 module.exports = router;

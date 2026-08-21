@@ -217,14 +217,7 @@ export default function CheckoutPage() {
         return;
       }
 
-      // 4. Handle Stripe warning
-      if (payMethod === 'stripe') {
-        toast.error('Stripe payments are not configured in this region yet. Please choose Razorpay or COD.', { id: toastId });
-        setLoading(false);
-        return;
-      }
-
-      // 5. Handle Razorpay Payment
+      // 4. Handle Razorpay Payment
       if (payMethod === 'razorpay') {
         const isLoaded = await loadRazorpayScript();
         if (!isLoaded) {
@@ -338,7 +331,6 @@ export default function CheckoutPage() {
 
   const PAY_OPTIONS = [
     { id:'razorpay', label:'Razorpay', desc:'UPI, Cards, Net Banking, Wallets', icon:'🏦', badge:'Recommended' },
-    { id:'stripe',   label:'Stripe',   desc:'International cards (Visa/Mastercard)', icon:'💳', badge:'' },
     { id:'cod',      label:'Cash on Delivery', desc:'Pay when your order arrives at door', icon:'💵', badge:'' },
   ];
 

@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
     name: String, street: String, city: String,
     state: String, pincode: String, phone: String
   },
-  paymentMethod: { type: String, enum: ['razorpay', 'stripe', 'cod'], required: true },
+  paymentMethod: { type: String, enum: ['razorpay', 'cod'], required: true },
   paymentStatus: { type: String, enum: ['pending', 'paid', 'failed', 'refunded'], default: 'pending' },
   paymentId: String,
   orderStatus: {
@@ -121,7 +121,7 @@ const paymentSchema = new mongoose.Schema({
   amount: Number,
   currency: { type: String, default: 'INR' },
   method: String,
-  gateway: { type: String, enum: ['razorpay', 'stripe', 'cod'] },
+  gateway: { type: String, enum: ['razorpay', 'cod'] },
   gatewayPaymentId: String,
   gatewayOrderId: String,
   status: { type: String, enum: ['created', 'success', 'failed', 'refunded'], default: 'created' },
