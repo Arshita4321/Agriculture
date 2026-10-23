@@ -1,0 +1,13 @@
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper font-sans text-slate-800 antialiased; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-forest-500; }
+}
+@layer components {
+  .card { @apply rounded-xl border border-slate-200 bg-white shadow-card; }
+  .field { @apply h-9 rounded-lg border border-slate-300 bg-white px-2.5 text-sm text-slate-800 focus:border-forest-500; }
+}

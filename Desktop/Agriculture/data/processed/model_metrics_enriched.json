@@ -1,0 +1,28 @@
+{
+  "model": "Random Forest Regression (Spark MLlib)",
+  "features": [
+    "year",
+    "fertilizer",
+    "pesticide",
+    "soil_N",
+    "soil_P",
+    "soil_K",
+    "soil_pH",
+    "avg_temp_c",
+    "total_rainfall_mm",
+    "avg_humidity_percent",
+    "crop",
+    "season",
+    "state"
+  ],
+  "target": "yield",
+  "split_method": "Chronological by year",
+  "test_start_year": 2016.0,
+  "training_rows": 15404,
+  "testing_rows": 4285,
+  "mae": 12.313472009356811,
+  "mse": 24031.16967069256,
+  "rmse": 155.01990088595903,
+  "r2": 0.9668488120196119,
+  "interpretation": "Held-out chronological regression metrics. R2 is not classification accuracy. Compare against the original model and a baseline."
+}

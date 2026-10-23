@@ -1,0 +1,13 @@
+{
+  "model": "Random Forest Regression (Spark MLlib)",
+  "target": "yield",
+  "split_method": "Chronological by year",
+  "test_start_year": 2016.0,
+  "training_rows": 15404,
+  "testing_rows": 4285,
+  "mae": 13.748201655722466,
+  "mse": 31443.495329999332,
+  "rmse": 177.32313816870976,
+  "r2": 0.9566234503468003,
+  "interpretation": "Regression metrics measured on held-out later years. R2 is not classification accuracy."
+}
